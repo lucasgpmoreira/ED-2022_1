@@ -1,0 +1,23 @@
+busca(umValor):
+nohComValor ← buscaAux(umValor);
+se (nohComValor = NULO){
+    informa(“Não encontrado”);
+} senão {
+    // efetua ação desejada, 
+    // por exemplo retornar o registro completo
+    efetuaAcao(nohComValor); 
+}
+
+buscaAux(umValor):
+// método retorna um nó, por isso é auxiliar (privado)
+atual ← raiz;
+enquanto (atual ≠ NULO) {
+	se (atual.valor = umValor) {
+		retorna atual;
+	} senão se (atual.valor > umValor) {
+		atual ← atual->esquerdo;
+	} senão {
+		atual ← atual.direito;
+	}
+}
+retorna atual; // retorna nulo quando não encontrado

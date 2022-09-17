@@ -1,0 +1,20 @@
+                               ,---.   ,---.   ,---.
+                             ,'     `.'     `.'     `.
+                             |     ,-|-.   ,-|-.     |
+                             `.  ,' ,'. `.' ,'. `.  ,'
+                               `-|-'   `-|-'   `-|-'
+                                 `.     ,',     ,'
+                                   `---'   `---'          
+===================================================================================
+                                Olimpiadas de Toquio
+Esse  programa foi pensado para auxiliar a organizar cada esporte e seus respectivos
+atletas, alem de cadastrar patrocinadores especificos a estes ou gerais do evento
+
+Para comecar escolha uma das areas de organizacao abaixo:
+-----------------------------------------------------------------------------------
+|          [1] ORGANIZACAO DOS ESPORTES, ATLETAS E SEUS PATROCINADORES            | 
+-----------------------------------------------------------------------------------
+|             [2] ORGANIZACAO DOS PATROCINADORES GERAIS DO EVENTO                 |                      
+-----------------------------------------------------------------------------------
+|                                  |  [3] SAIR  |                                 |
+-----------------------------------------------------------------------------------

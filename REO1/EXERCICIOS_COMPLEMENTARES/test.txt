@@ -1,0 +1,61 @@
+GAP105    Redes de Cooperação
+GAP115    Economia Brasileira Contemporânea
+GAP121    Licitação, Contrato e Convênios
+GCH122    Ética II
+GDE124    Língua Brasileira de Sinais (libras)
+GDE208    Cultura Indígena e Afrobrasileira
+GEL178    Habilidades em Língua Inglesa I
+GEL179    Habilidades em Língua Inglesa II
+
+GAE137	Fundamentos de Extensão
+GAE139	Economia Brasileira
+GAE140	Pesquisa Operacional
+GAE142	Planejamento Empresarial
+GAE143	Elaboração e Gestão Orçamentária Empresarial
+GAE149	Elaboração e Avaliação de Projetos Empresariais
+GAE151	Desenvolvimento e Gestão da Agricultura Familiar
+GAE154	Gestão de Organizações do Terceiro Setor
+GAE155	Consultoria Empresarial
+GAE156	Mudança e Inovação Organizacional
+GAE162	Gestão Socioambiental
+GAE164	Pesquisa de Marketing
+GAE165	Planejamento e Controle da Produção	
+GAE167	Tópicos Especiais em Administração
+GAE170	Investimentos Financeiros
+GAE171	Extensão Universitária
+GAE184	Comunicação Empresarial
+GAE220	Estratégias de Negócios Sustentáveis
+GAE235	Desenvolvimento Rural e Políticas Públicas
+GAE237	Estratégias Empresariais na Era Digital
+GAE239	Gestão e Responsabilidade Social
+GAE285	Comportamento do Consumidor
+GAE287	Inovação e Competitividade
+GAE288	Gestão de Varejo e Trade Marketing	
+GAE290	Gestão Multicultural
+GAE298	Tópicos em Finanças Corporativas
+GAE299	Negócios Globais
+GAE300	Tópicos em Administração: Gestão do Desenvolvimento Local
+GAE306	Controladoria
+GAE307	Finanças Pessoais e Comportamentais
+GAE309	Mercado de Capitais
+GAE310	Introdução a Agroecologia
+GAE321	Gestão da água: dimensões sociais, políticas, econômicas e ambientais
+GAE326	Trabalho, Ergonomia e Doenças Laborais
+GAE327	Qualidade de Vida no Trabalho	
+GAP105	Redes de Cooperação
+GAP106	Macroeconomia
+GAP111	Políticas Públicas no Brasil
+GAP112	Administração Pública I
+GAP115	Economia Brasileira Contemporânea
+GAP125	Políticas Públicas e Desenvolvimento
+GAP127	Gestão Social
+GCH189	Ciências Políticas
+GDE123	Educação Trabalho Ciência e Tecnologia
+GDE124	Língua Brasileira de Sinais (libras)
+GDE125	Ciência, Tecnologia e Sociedade
+GDE208	Cultura Indígena e Afrobrasileira
+GEL178	Habilidades em Língua Inglesa I
+GEL179	Habilidades em Língua Inglesa II	2	-	
+GEL231	Língua Inglesa em Contexto Acadêmico para Proficiência QCE A2
+GGA114	Estratégias em Mercados de Derivativos Agropecuários
+PRG005	Atividade Acadêmica Internacional

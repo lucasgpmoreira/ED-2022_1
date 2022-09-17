@@ -1,0 +1,186 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
+#include "leCSV.h"
+#include "estrutura.h"
+
+using namespace std;
+//maiores valores em cada linha, obtidos a partir de outro programa que le o arquivo leCSV
+
+class operacoes {
+private:
+    void funcaoImprime(ostream& out, info& aux);
+public:
+    void inserir(long pos);
+    void exibir(long posIni, long posFim, bool imprimirTudo);
+    void trocar(long pos1, long pos2);
+    void alterar(long id);
+};
+
+void operacoes::funcaoImprime(ostream& out, info& aux) {
+    out << aux.id << ", " << aux.nome << ", " << aux.cidade << ", " << aux.esporte << ", " << aux.evento << ", " << aux.noc << endl;
+}
+
+void operacoes::exibir(long posIni, long posFim, bool eParaImprimirTudo) {
+    info aux;
+    posIni *= sizeof(aux);
+    bool elementoEncontrado = false;
+    int cont = 0;
+    ifstream arquivobi("csv_em_binario.dat", ios::binary);
+
+
+    cout << "Deseja imprimir os elementos na TELA ou em um ARQUIVO(recomendado)? ([T]/[A]) ";
+    char opcao;
+    cin >> opcao;
+    ofstream novoTxt;
+    if (opcao == 'T' or opcao == 't') {
+        cout << "ID, NOME, CIDADE, ESPORTE, EVENTO, NOC" << endl;
+    } else {
+        novoTxt.open("registros-IDs:" + to_string(posIni / sizeof(aux)) + "-" + to_string(posFim) + ".txt");
+        novoTxt << "ID, NOME, CIDADE, ESPORTE, EVENTO, NOC" << endl;
+    }
+    if (eParaImprimirTudo) {
+        ofstream novoTxt("todos-os-registros.txt");
+        novoTxt << "ID, NOME, CIDADE, ESPORTE, EVENTO, NOC" << endl;
+        while (!arquivobi.eof()) {
+            arquivobi.read((char*)&aux, sizeof(aux));
+            if (opcao == 'T' or opcao == 't') {
+                funcaoImprime(cout, aux);
+            } else if (opcao == 'A' or opcao == 'a') {
+                funcaoImprime(novoTxt, aux);
+            }
+            cont += sizeof(aux);
+        }
+    } else {
+        arquivobi.seekg(posIni);
+        while (!arquivobi.eof() and !(elementoEncontrado)) {
+            arquivobi.read((char*)&aux, sizeof(aux));
+            if (opcao == 'T' or opcao == 't') {
+                funcaoImprime(cout, aux);
+            } else if (opcao == 'A' or opcao == 'a') {
+                funcaoImprime(novoTxt, aux);
+            }
+            if (aux.id == posFim) {
+                elementoEncontrado = true;
+            }
+        }
+    }
+    novoTxt.close();
+    arquivobi.close();
+}
+
+
+void operacoes::alterar(long id) {
+    //altera binario na posicao do id
+    string nome, cidade, esporte, evento, noc;
+    info aux;
+    fstream arquivobi("csv_em_binario.dat", ios::binary | ios::in | ios::out);
+    arquivobi.seekp(id * sizeof(aux));
+    aux.id = id;
+    cout << "Digite o novo nome(maximo 108 caracteres): ";
+    getline(cin >> ws, nome);
+    strcpy(aux.nome, (nome.substr(0, TAM_NOME - 1)).c_str());
+    cout << "Digite a nova cidade(maximo 22 caracteres): ";
+    getline(cin >> ws, cidade);
+    strcpy(aux.cidade, (cidade.substr(0, TAM_CIDADE - 1)).c_str());
+    cout << "Digite o novo esporte(maximo 25 caracteres): ";
+    getline(cin >> ws, esporte);
+    strcpy(aux.esporte, (esporte.substr(0, TAM_ESPORTE - 1)).c_str());
+    cout << "Digite o novo evento(maximo 87 caracteres): ";
+    getline(cin >> ws, evento);
+    strcpy(aux.evento, (evento.substr(0, TAM_EVENTO - 1)).c_str());
+    cout << "Digite o novo noc(maximo 3 caracteres): ";
+    getline(cin >> ws, noc);
+    strcpy(aux.noc, (noc.substr(0, TAM_NOC - 1)).c_str());
+    arquivobi.write((char*)&aux, sizeof(aux));
+    arquivobi.close();
+
+}
+
+void operacoes::inserir(long pos) {
+    //inserir em uma posicao especifica do arquivo binario
+    
+}
+
+void operacoes::trocar(long pos1, long pos2) {
+    //troca dois elementos de suas posicoes do arquivo binario
+}
+
+
+
+
+int main() {
+    ifstream testa;
+    testa.open("csv_em_binario.dat");
+    if (testa) {
+        cout << "O arquivo binario ja existe convertido neste diretorio." << endl;
+    } else {
+        cout << "Convertendo arquivo CSV para binário..." << endl;
+        leCSV arqCSV;
+    }
+    //assim que declarado faz toda a operação de converter o csv para binário
+    operacoes op;
+    //arrumar que so pode ser convertido uma vez
+    int opcao;
+    cout << "O que deseja fazer?: " << endl
+        << "1 - Adicionar um elemento no arquivo binario em uma posicao especifica " << endl
+        << "2 - Visualizar os registros entre a posicao x e y." << endl
+        << "3 - Alterar os dados de um registro em uma posicao especifica." << endl
+        << "4 - Trocar dois registros de posicao no arquivo." << endl
+        << "5 - Imprimir todos os registros do arquivo binario, na ordem em que estao armazenados." << endl
+        << "6 - SAIR" << endl;
+    do {
+        cin >> opcao;
+        cout << "Voce escolheu ";
+        switch (opcao) {
+        case 1:
+            cout << "adicionar um elemento no arquivo binario em uma posicao especifica " << endl;
+            cout << "Digite a posicao que deseja inserir o elemento: ";
+            long pos;
+            cin >> pos;
+            op.inserir(pos);
+            break;
+        case 2:
+            cout << "visualizar os registros entre a posicao x e y." << endl;
+            cout << "Digite a posicao inicial do intervalo que deseja visualizar: ";
+            int posIni;
+            cin >> posIni;
+            cout << "Agora a posicao final: ";
+            int posFim;
+            cin >> posFim;
+            op.exibir(posIni, posFim, false);
+            break;
+        case 3:
+            cout << "alterar os dados de um registro em uma posicao especifica." << endl;
+            cout << "Digite o ID do registro que deseja alterar: ";
+            long id;
+            cin >> id;
+            op.alterar(id);
+            break;
+        case 4:
+            cout << "trocar dois registros de posicao no arquivo." << endl;
+            break;
+        case 5:
+            cout << "imprimir todos os registros do arquivo binario, na ordem em que estao armazenados." << endl;
+            op.exibir(0, 0, true);
+            break;
+        case 6:
+            cout << "sair" << endl;
+            break;
+        default:
+            cout << "uma opcao invalida" << endl;
+            break;
+        }
+        if (opcao != 6) {
+            cout << "O que deseja fazer?: " << endl
+                << "1 - Adicionar um elemento no arquivo binario em uma posicao especifica " << endl
+                << "2 - Visualizar os registros entre a posicao x e y." << endl
+                << "3 - Alterar os dados de um registro em uma posicao especifica." << endl
+                << "4 - Trocar dois registros de posicao no arquivo." << endl
+                << "5 - Imprimir todos os registros do arquivo binario, na ordem em que estao armazenados." << endl
+                << "6 - SAIR" << endl;
+        }
+    } while (opcao != 6);
+    return 0;
+}

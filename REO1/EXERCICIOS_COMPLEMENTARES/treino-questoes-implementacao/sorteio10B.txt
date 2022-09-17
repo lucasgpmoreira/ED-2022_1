@@ -1,0 +1,17 @@
+1 - André Ulhôa Werneck, Enunciado 8, Aumentar o vetor com 20% a mais de posições (usando arredondamento para cima)
+
+2 - Brenda Moreira da Silva, Enunciado 4, Redimensionar o vetor adicionando três novas posições a cada redimensionamento
+
+3 - Eduardo Oliveira Gomes, Enunciado 9, Aumentar o vetor com 50% a mais de posições (usando arredondamento para cima)
+
+4 - Gabriel Lucas de Sousa Silva, Enunciado 5, Aumentar o vetor com 20% a mais de posições (usando arredondamento para cima)
+
+5 - Gabriel Raimundo Pereira Barroso, Enunciado 7, Redimensionar o vetor adicionando quatro novas posições a cada redimensionamento
+
+6 - Hélio Henrique Medeiros Silva, Enunciado 2, Redimensionar o vetor adicionando duas novas posições a cada redimensionamento
+
+7 - Lucas Carvalho Ferreira, Enunciado 7, Redimensionar o vetor adicionando três novas posições a cada redimensionamento
+
+8 - Pedro Paulo Araujo Carvalho, Enunciado 9, Redimensionar o vetor adicionando quatro novas posições a cada redimensionamento
+
+9 - Samuel Henrique Morais Rufino, Enunciado 1, Redimensionar o vetor adicionando duas novas posições a cada redimensionamento

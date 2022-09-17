@@ -1,0 +1,32 @@
+1 -3 2      10 = elementos
+-3 2 4       3 = tamanho das subfilas
+2 4 -6       8 = quant subfilas
+4 -6 7
+-6 7 -8
+7 -8 -9
+-8 -9 10
+-9 10 5
+
+1 2 -3 4        8 = elementos
+2 -3 4 -5       4 = tamanho das subfilas
+-3 4 -5 -6      5 = quant subfilas
+4 -5 -6 7
+-5 -6 7 -8
+
+1 2 3 4 -5 6               15 = elementos
+2 3 4 -5 6 7                6 = tamanho das subfilas
+3 4 -5 6 7 8               10 = quant subfilas
+4 -5 6 7 8 9
+-5 6 7 8 9 10
+6 7 8 9 10 11
+7 8 9 10 11 -12
+8 9 10 11 -12 -13
+9 10 11 -12 -13 -14
+10 11 -12 -13 -14 -15
+
+
+
+8
+1 3 5 7 10 10 11 19
+6
+2 4 6 8 10 12
